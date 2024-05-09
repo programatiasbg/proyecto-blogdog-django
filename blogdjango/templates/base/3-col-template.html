@@ -1,0 +1,20 @@
+{% extends "./base.html" %}
+<div class="container-fluid">
+    {% block content %}
+    <div class="row">
+        <div class="col-md-1 d-none d-md-block ">{% block content_left %}{% endblock %}</div>
+        <div class="col-md-9 col-lg-9 px-md-3">
+            <div class="container">
+                {% block content_mid %}{% endblock %}</div>
+            </div>
+        <div class="col-md-2 col-lg-2">
+            <div class="pe-2 py-5 sticky-top">
+                <div class="p-2 mb-2">
+                    {% include "blog/components/search-bar.html" %}
+                {% block content_rigth %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

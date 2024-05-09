@@ -1,0 +1,46 @@
+{% if posts %}
+    <!-- código aquí para listar los libros -->
+    {% for post in posts %}
+    {% comment %} <a href="{{ post.get_absolute_url }}" class="text-decoration-none"> {% endcomment %}
+    <a href="{{post.get_absolute_url}}" class="text-decoration-none text-bg-light">
+        {% if forloop.last %}
+        <div class="row border-bottom "
+        hx-trigger="revealed" hx-get="{% url 'homepage' %}?page={{ page_obj.number|add:1 }}" hx-swap="afterend">
+        {% else %}
+        <div class="row border-bottom mb-2">
+        {% endif %}
+            <div class="col-md-7 pb-3">
+                <div
+                    class="d-flex align-items-start flex-column mb-3"
+                    style="height: 100%"
+                >
+                    <div class="p-2 mb-auto">
+                        <h5 class="fw-bold infscroll-title">
+                            {{ post.title }}
+                        </h5>
+                        <h6>
+                            {{ post.subtitle }}
+                        </h6>
+                        <p>
+                            {{ post.content|slice:":200" | markdown | safe }}
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-between w-100 p-2">
+                        <p class="infscroll-author">Author: {{post.author}}</p>
+                        <span class="infscroll-date">Create: {{post.created_at|date:"d-m-Y"}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 img-blog-hover pb-3">
+                <img
+                    src="https://picsum.photos/id/{{ post.id }}/600/500"
+                    class="img-fluid rounded-start img-blog-hover"
+                    alt="post image"
+                />
+            </div>
+        </div>
+    </a>
+    {% endfor%}
+{% else %}
+    <p>Not post published... Sorry!</p>
+{% endif %}

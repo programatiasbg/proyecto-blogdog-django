@@ -1,0 +1,104 @@
+{% extends '../base/3-col-template.html' %}
+
+{% block content_left %}
+<div class="sticky-top">{% include 'base/vertical-navbar.html' %}</div>
+{% endblock %}
+
+{% block content_mid %}
+<h1 class="fs-1 fw-bold pb-5">
+    {% if posts %}
+        <span class="text-muted">Results for &nbsp;</span><strong>{{ request.GET.s }}</strong>
+    {% else %}
+        <span>Try again</span>
+    {% endif %}
+</h1>
+<div class="center mx-auto" style="max-width: 683px;">
+    <h1 class="fs-1 fw-bold pb-5">{{ tag|title }}</h1>
+    {% include "blog/components/post-list-elements-search.html" %}
+    {% if not posts %}
+        <div class="col-12">Try searching for something else!</div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block content_rigth %}
+    <div class="p-2 mb-2">
+        {% tag_cloud %}
+    </div>
+
+    {% if post.author %}
+        <div class="p-2">
+            <h2 class="pb-2 border-bottom">Mas artículos de {{ post.author }}</h2>
+            <div class="row  row-cols">
+                {% for post in post_related%}
+                    <div class="col">
+                        <small class="">{{post.created_at|date:"M Y"}}</small>
+                        <img src="https://picsum.photos/id/{{ post.id }}/600" class="img-fluid rounded mx-auto d-block mb-1" alt="post image"
+                        />
+                        <div>
+                            <h6 class=" mt-1 fs-5 text-body-emphasis">{{ post.title|truncatechars:80 }}</h6>
+                            <p>{{ post.subtitle|truncatechars:100 }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="p-2">
+        <h4 class="fst-italic">Archives</h4>
+        <ol class="list-unstyled mb-0">
+            <li>
+                <a href="#">March 2021</a>
+            </li>
+            <li>
+                <a href="#">February 2021</a>
+            </li>
+            <li>
+                <a href="#">January 2021</a>
+            </li>
+            <li>
+                <a href="#">December 2020</a>
+            </li>
+            <li>
+                <a href="#">November 2020</a>
+            </li>
+            <li>
+                <a href="#">October 2020</a>
+            </li>
+            <li>
+                <a href="#">September 2020</a>
+            </li>
+            <li>
+                <a href="#">August 2020</a>
+            </li>
+            <li>
+                <a href="#">July 2020</a>
+            </li>
+            <li>
+                <a href="#">June 2020</a>
+            </li>
+            <li>
+                <a href="#">May 2020</a>
+            </li>
+            <li>
+                <a href="#">April 2020</a>
+            </li>
+        </ol>
+    </div>
+
+    <div class="p-2">
+        <h4 class="fst-italic">Elsewhere</h4>
+        <ol class="list-unstyled">
+            <li>
+                <a href="#">GitHub</a>
+            </li>
+            <li>
+                <a href="#">Twitter</a>
+            </li>
+            <li>
+                <a href="#">Facebook</a>
+            </li>
+        </ol>
+    </div>
+{% endblock %}

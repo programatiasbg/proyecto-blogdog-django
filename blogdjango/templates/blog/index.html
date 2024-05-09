@@ -1,0 +1,22 @@
+{% extends "../base/base.html" %} {% block title %}Patrulla Canina{% endblock %}
+{% block content %}
+    {% include "../base/navbar.html" %}
+    <main>
+        {% include "./components/carrousel.html" %}
+        {% include "./components/information.html" %}
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-10 mt-5">
+                    {% include "./components/post-list-elements.html" %}
+                </div>
+                <div class="d-none d-lg-block col-lg-2">
+                    {% tag_cloud %}
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="mx-0">
+        {% include '../base/newsletter.html' %}
+        {% include '../base/footer.html' %}
+    </div>
+{% endblock %}

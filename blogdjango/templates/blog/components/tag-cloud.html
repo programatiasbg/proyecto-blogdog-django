@@ -1,0 +1,17 @@
+<div class="my-4">
+    <div class="border-bottom">
+        <div class="pb-3">
+            <h4 class="pb-2 fw-bold">
+                RAZAS
+            </h4>
+            {% for tag in tags %}
+            <span
+                class="badge rounded-pill bg-light rounded-pill p-2 me-1 mb-1"
+                style="display: inline-block"
+            >
+                <a href="{% url 'post_by_tag' tag.slug %}" class="text-decoration-none text-dark bg-white"><span class="fw-light fs-6"> {{ tag.name }} </span></a>
+            </span>
+            {% endfor %}
+        </div>
+    </div>
+</div>

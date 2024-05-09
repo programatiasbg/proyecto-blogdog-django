@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Blog Django" />
+        <meta
+            name="author"
+            content="Blayden"
+        />
+        <meta name="generator" content="MMBG 0.122.0" />
+        <title>Blog · Bootstrap v5.3</title>
+        <title>{% block title %}Homepage{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{% static "img/icon-schnauzer.jpg"%}">
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- HTMX -->
+        <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+        <script src="{% static 'js/main.js' %}" defer></script>
+        <script src="{% static 'js/htmx.min.js' %}" defer></script>
+    </body>
+</html>
