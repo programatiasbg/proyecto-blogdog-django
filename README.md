@@ -116,8 +116,3 @@ You can also read a [blog post](https://epicserve.com/django/2022/12/30/using-fl
 about using it with fly.io. If you want to blog about using the Django Base Site with other PaaS providers, please let
 me know, and I can link to the post here.
 ## Tech Stack
-
-**Client:** React, Redux, TailwindCSS
-
-**Server:** Node, Express
-
