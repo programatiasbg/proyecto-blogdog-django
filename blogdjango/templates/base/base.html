@@ -1,17 +1,14 @@
 {% load static %}
+{% load django_htmx %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Blog Django" />
-        <meta
-            name="author"
-            content="Blayden"
+        <meta name="Blayden"  content="Blog using Django" />
         />
-        <meta name="generator" content="MMBG 0.122.0" />
-        <title>Blog · Bootstrap v5.3</title>
-        <title>{% block title %}Homepage{% endblock %}</title>
+        <title>{% block title %}Blog · Bootstrap v5.3{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{% static "img/icon-schnauzer.jpg"%}">
         <link
             rel="stylesheet"
@@ -25,7 +22,7 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     </head>
     <body>
-        {% block content %}{% endblock %}
+        {% block content %}{% endblock content %}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
         <!-- HTMX -->

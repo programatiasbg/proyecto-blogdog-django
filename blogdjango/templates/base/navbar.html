@@ -1,58 +1,56 @@
 {% load static %}
-<header>
-    <nav class="navbar navbar-expand-md">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img
-                    src="{% static 'img/icon-schnauzer.jpg' %}"
-                    alt="image-schnauzer-tomando-mate"
-                    width="32"
-                    height="32"
-                    class="rounded-circle d-inline-block align-text-top"
-                />
-            </a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarScroll"
-                aria-controls="navbarScroll"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<nav class="navbar navbar-expand-md">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img
+                src="{% static 'img/icon-schnauzer.jpg' %}"
+                alt="image-schnauzer-tomando-mate"
+                width="32"
+                height="32"
+                class="rounded-circle d-inline-block align-text-top"
+            />
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-                <a class="navbar-brand col-lg-3 me-0 fs-4" href="#"
-                    >La Patrulla Canina</a
-                >
-                <ul class="navbar-nav col-lg-6 justify-content-lg-center">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"
-                            >Inicio</a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Historias</a>
-                    </li>
-                </ul>
-                <div class="d-lg-flex col-lg-3 justify-content-lg-end">
-                    <form  method="get"  action="/search/" class="d-flex" role="search">
-                        <input
-                            class="form-control me-2"
-                            name="s"
-                            id="id_s"
-                            type="search"
-                            placeholder="Search..."
-                            aria-label="search"
-                        />
-                    </form>
-                </div>
+        <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+            <a class="navbar-brand col-lg-3 me-0 fs-4" href="#"
+                >La Patrulla Canina</a
+            >
+            <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"
+                        >Inicio</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Historias</a>
+                </li>
+            </ul>
+            <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+                <form  method="get"  action="/search/" class="d-flex" role="search">
+                    <input
+                        class="form-control me-2"
+                        name="s"
+                        id="id_s"
+                        type="search"
+                        placeholder="Search..."
+                        aria-label="search"
+                    />
+                </form>
             </div>
         </div>
-    </nav>
-</header>
+    </div>
+</nav>

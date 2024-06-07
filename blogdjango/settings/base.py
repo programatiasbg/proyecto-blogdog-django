@@ -1,9 +1,10 @@
+from dotenv import load_dotenv
 import os
 from pathlib import Path
 
-from dotenv import load_dotenv
 
-load_dotenv()  # take environment variables from .env.
+# take environment variables from .env.
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,11 +78,11 @@ WSGI_APPLICATION = 'blogdjango.wsgi.application'
 DATABASES = {
     "default": {
         'ENGINE': 'django.db.backends.postgresql',
-        "NAME": "blogdjango",
-        "USER": "postgres",
-        "PASSWORD": "15mati85",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+        'NAME': 'blogdjango',
+        'USER': 'postgres',
+        'PASSWORD': '15mati85',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     },
     "sqlite3": {
         "ENGINE": "django.db.backends.sqlite3",
